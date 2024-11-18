@@ -1,0 +1,135 @@
+/* General Body Styles */
+body {
+    background-color: black;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Full-screen Section */
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Central Time & Date Container */
+#div {
+    position: absolute;
+    z-index: 10;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 3px solid aqua;
+    background-image: linear-gradient(125deg, rgba(0, 255, 255, 0.4), rgba(0, 0, 255, 0.2));
+    animation: pulse 2s infinite alternate;
+    box-shadow: 0px 0px 30px aqua;
+}
+
+/* Boxes Animations */
+#box1, #box2, #box3, #box4, #box5, #box6 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 50px blue;
+}
+
+#box1 {
+    width: 300px;
+    height: 300px;
+    animation: rotateScale 10s infinite linear;
+    background: linear-gradient(135deg, aqua, blue);
+}
+
+#box2 {
+    width: 250px;
+    height: 250px;
+    animation: matrixRotate 12s infinite linear;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(0, 0, 255, 0.6));
+}
+
+#box3 {
+    width: 200px;
+    height: 200px;
+    animation: rotateScaleReverse 8s infinite linear;
+    background: linear-gradient(135deg, aqua, blue);
+}
+
+#box4 {
+    width: 150px;
+    height: 150px;
+    animation: matrixRotateReverse 14s infinite linear;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.7), rgba(0, 0, 255, 0.5));
+}
+
+#box5 {
+    width: 100px;
+    height: 100px;
+    animation: rotateSkew 6s infinite ease-in-out;
+    background: linear-gradient(135deg, aqua, blue);
+}
+
+#box6 {
+    width: 50px;
+    height: 50px;
+    animation: skewTranslate 4s infinite ease-in-out;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(0, 0, 255, 0.6));
+}
+
+/* Fonts Styling */
+#fullyear, #C4 {
+    font-family: 'Courier New', Courier, monospace;
+    color: aqua;
+    text-shadow: 0px 0px 5px aqua;
+}
+
+/* Keyframes for Animations */
+@keyframes rotateScale {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(360deg) scale(1.5); }
+}
+
+@keyframes rotateScaleReverse {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(-360deg) scale(0.8); }
+}
+
+@keyframes matrixRotate {
+    0% { transform: matrix(1, 0, 0, 1, 0, 0); }
+    50% { transform: matrix(0.5, -1, 1, 0.5, 0, 0); }
+    100% { transform: matrix(1, 0, 0, 1, 0, 0); }
+}
+
+@keyframes matrixRotateReverse {
+    0% { transform: matrix(1, 0, 0, 1, 0, 0); }
+    50% { transform: matrix(-0.5, 1, -1, -0.5, 0, 0); }
+    100% { transform: matrix(1, 0, 0, 1, 0, 0); }
+}
+
+@keyframes rotateSkew {
+    0%, 100% { transform: rotate(0deg) skew(0deg, 0deg); }
+    50% { transform: rotate(180deg) skew(20deg, 20deg); }
+}
+
+@keyframes skewTranslate {
+    0%, 100% { transform: skew(0deg) translate(0, 0); }
+    50% { transform: skew(45deg) translate(20px, -20px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
